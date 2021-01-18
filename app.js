@@ -92,6 +92,12 @@ function createItems(id,value){
       <i class="fas fa-times-circle fa-2x"></i>
     </button>
   </div>`
+  const p = element.querySelector('p');
+  p.contentEditable = 'true';
+  p.addEventListener('click', () => p.contentEditable = 'true')
+  p.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter')  p.contentEditable = 'false';
+  })
   const deleteBtn = element.querySelector('.delete-btn');
   deleteBtn.addEventListener('click', deleteItems);
 
