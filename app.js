@@ -5,11 +5,11 @@ const addBtn = document.querySelector('.add-btn');
 const container = document.querySelector('.toDoList-container');
 const list = document.querySelector('.toDoList-list');
 const clearBtn = document.querySelector('.clear-btn');
-const colors = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
+const colors = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+const input = document.querySelector('.input');
 // edit option
 editSymbol = false;
 let editElement = '';
-
 
 // event listeners
 form.addEventListener('submit', addItems);
@@ -20,7 +20,9 @@ addBtn.addEventListener('click', function(){
   for(let i=0; i<6; i++){
     hexColor += colors[randomColors()]
   }
+  
   document.body.style.backgroundColor = hexColor;
+  input.style.borderColor = hexColor;
 })
 // colors 
 function randomColors(){
