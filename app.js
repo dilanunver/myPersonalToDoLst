@@ -5,19 +5,33 @@ const addBtn = document.querySelector('.add-btn');
 const container = document.querySelector('.toDoList-container');
 const list = document.querySelector('.toDoList-list');
 const clearBtn = document.querySelector('.clear-btn');
-
+const colors = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
 // edit option
 editSymbol = false;
 let editElement = '';
+
 
 // event listeners
 form.addEventListener('submit', addItems);
 clearBtn.addEventListener('click', clearItems);
 
+addBtn.addEventListener('click', function(){
+  let hexColor = '#';
+  for(let i=0; i<6; i++){
+    hexColor += colors[randomColors()]
+  }
+  document.body.style.backgroundColor = hexColor;
+})
+// colors 
+function randomColors(){
+  return Math.floor(Math.random()* colors.length)
+}
+
 // functions
 
 // add button
 function addItems(e){
+
 e.preventDefault();
 const value = toDo.value;
 const id = new Date().getTime().toString();
